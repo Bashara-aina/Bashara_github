@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java to Javascript</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="container" id="app">
+        <div class="row">
+
+            <div class="col-md-8 offset-md-2 py-5">
+                <h2 class="text-center">Konversi Suhu</h2>
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                    <input type="number" name="Tabel konversi suhu" id="table" class="form-control" v-model="suhu1" onchange="option1(this.value)">
+
+                    <select class="form-select" v-model="option1">
+                        <option value="Celcius">Celcius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Kelvin">Kelvin</option>
+                    </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+                    <input type="number" name="Tabel konversi suhu" id="table2" class="form-control" v-model="suhu2" disabled onchange="option1(this.value)">
+                    <select class="form-select" v-model="option2">
+                        <option value="Celcius">Celcius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Kelvin">Kelvin</option>
+                    </select>
+
+
+                    </div>
+                    
+        
+
+                </div>
+                    
+            </div>
+            
+        </div>
+
+    </div>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    const app = Vue.createApp({
+    data(){
+        return{
+            suhu1: 0,
+            suhu2: 0,
+            option1: '',
+            option2: ''
+        }
+    },
+    watch: {
+        option1(value){
+            if (value === 'Celcius'){
+                if(this.option2 === 'Celcius'){
+                this.suhu2 = this.suhu1;
+            }
+
+                if (this.option2 === 'Fahrenheit'){
+                    var result = (this.suhu1 * 9/5) + 32;
+                    this.suhu2 = result;
+                }
+
+                if (this.option2 === "Kelvin"){
+                    var result = Number(this.suhu1) + 273.15;
+                    this.suhu2 = result;
+                }
+            }
+            
+            if (value === 'Fahrenheit'){
+                if (this.option2 === 'Celcius'){
+                    var result = (this.suhu1 - 32) *5/9;
+                    thus.suhu2 = result
+                    }
+
+                if (this.option2 === 'Fahrenheit'){
+                    this.suhu2 = this.suhu1;
+                }
+
+                if (this.option2 === "Kelvin"){
+                    var result = ((this.suhu1 - 32) * 5/9) + 273.15;
+                    this.suhu2 = result;
+                }
+            }
+
+            if (value === 'Kelvin'){
+                if (this.option2 === 'Celcius'){
+                    var result = this.suhu1 - 273.15;
+                    this.suhu2 = result;
+                }
+
+                if (this.option2 === 'Fahrenheit'){
+                    var result = ((this.suhu1 - 273.15) * 9/5)*32; 
+                    this.suhu2 = result;
+                }
+
+                if (this.option2 === "Kelvin"){
+                    this.suhu2 = this.suhu1;
+                }
+            }
+
+        },
+
+        option2(value){
+            if (value === 'Celcius'){
+                if(this.option1 === 'Celcius'){
+                this.suhu2 = this.suhu1;
+            }
+
+                if (this.option1 === 'Fahrenheit'){
+                    var result = (this.suhu1 - 32) *5/9;
+                    thus.suhu2 = result
+                }
+
+                if (this.option1 === "Kelvin"){
+                    var result = this.suhu1 - 273.15;
+                    this.suhu2 = result;
+                }
+            }
+            
+            if (value === 'Fahrenheit'){
+                if (this.option1 === 'Celcius'){
+                    var result = (this.suhu1 * 9/5) + 32;
+                    thus.suhu2 = result;
+                    }
+
+                if (this.option1 === 'Fahrenheit'){
+                    this.suhu2 = this.suhu1;
+                }
+
+                if (this.option1 === "Kelvin"){
+                    var result = ((this.suhu1 - 273.15) * 9/5) + 32; 
+                    this.suhu2 = result;
+                }
+            }
+
+            if (value === 'Kelvin'){
+                if (this.option1 === 'Celcius'){
+                    var result = Number(this.suhu1) + 273.15;
+                    this.suhu2 = result;
+                }
+
+                if (this.option1 === 'Fahrenheit'){
+                    var result = ((this.suhu1 - 32) * 5/9) + 273.15;
+                    this.suhu2 = result;
+                }
+
+                if (this.option1 === "Kelvin"){
+                    this.suhu2 = this.suhu1;
+                }
+            }
+        }
+    }
+})
+
+app.mount('#app')
+</script>
+    
+</body>
+</html>
