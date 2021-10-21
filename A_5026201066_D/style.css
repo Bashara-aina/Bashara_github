@@ -1,0 +1,35 @@
+#content {
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+    padding: auto;
+    background-color: whitesmoke;
+}
+
+h2{
+    text-align: center;
+}
+
+#judul{
+    margin: 20px;
+}
+
+
+.tab {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+#send{
+margin-left: 20%;
+margin-right: 40px;
+}
+
+.btn{
+width: 200px;
+}
+
+
+.form-group {
+    width: 100%;
+}

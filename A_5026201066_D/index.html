@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETS PWEB Kode D</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="icon" href="http://perikanan.unikal.ac.id/wp-content/uploads/2019/10/Ujian-Tengah-Semester-2.png">
+
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container p-sm-4 mt-5" id="content">
+
+    <div id="identitas">
+        Bashara Aina
+        <br>
+        Bashara
+        <br>
+        5026201066
+    </div>
+
+    <div id="judul">
+        <h2> Form Input Peserta Vaksinasi</h2>
+    </div>
+
+    <form id="form" class="need-validation" novalidate action="https://classroom.its.ac.id/login/index.php">
+        <div class="form-group row">
+            <label class="col-sm-4" for="Name">Nama Peserta &emsp; &emsp; :</label>
+            <input type="text" placeholder="John Doe" id="namapeserta" required class="form-control col-sm-8" minlength="10">
+            <div class="valid-feedback">Done!</div>
+            <div class="invalid-feedback">Harus dilengkapi dan hanya dengan huruf minimal 10 karakter</div>
+            </div>
+
+
+        <div class="form-group row">
+            <label for="Name" class="col-sm-4">NIK <span style="display: inline-block;
+            margin-left: 112px;"></span>:</label>
+            <input type="text" placeholder="16 digit NIK" id="nik" required class="form-control col-sm-8" minlength="16" maxlength="16">
+            <div class="valid-feedback">Done!</div>
+            <div class="invalid-feedback">Tolong isi dengan 16 digit NIK anda</div>
+            </div>
+
+        <div class="form-group row">
+            <label for="course" class="col-sm-4">Jenis Vaksin <span style="display: inline-block;
+                margin-left: 55px;"></span>:</label>
+            <select class="custom-select col-sm-8" name="state" id="state" required>
+                <option selected disabled value="">Please Choose</option>
+                <option>AZ</option>
+                <option>Sinovac</option>
+                <option>Moderna</option>
+            </select>
+            <div class="valid-feedback">Done!</div>
+            <div class="invalid-feedback">Pilih vaksin yang anda ingin gunakan!</div>
+        </div>
+
+        <div class="form-group row">
+            <label for="Name" class="col-sm-4">No Batch <span style="display: inline-block;margin-left: 72px;"></span>:</label>
+            <input type="text" placeholder="123456" id="nobatch" required class="form-control col-sm-8" maxlength="6">
+            <div class="valid-feedback">Done!</div>
+            <div class="invalid-feedback">Isi dengan 6 digit No Batch anda!</div>
+        </div>
+
+        <button id="send" class="btn btn-primary btn-l">Send</button>
+        <button id="reset" type="reset" class="btn btn-success">Reset</button>
+
+
+</form>
+        
+
+</div>
+
+    
+</body>
+</html>
